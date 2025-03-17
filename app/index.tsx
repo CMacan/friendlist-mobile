@@ -1,6 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
-import { friends } from "../friendsdata";
+//@ts-ignore
+import { friends } from "../friendsData";
 
 export default function Index() {
   const router = useRouter();

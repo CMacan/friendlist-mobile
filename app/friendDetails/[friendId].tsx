@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView} from "react-native";
 import { useLocalSearchParams } from "expo-router";
-import { friends } from "../../friendsdata";
+import { friends } from "../../friendsData";
 
 export default function FriendDetails() {
   const { friendId } = useLocalSearchParams(); 
@@ -16,32 +16,43 @@ export default function FriendDetails() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>{friend.name}'s Profile</Text>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.label}>Nickname:</Text>
-        <Text style={styles.value}>{friend.nickname}</Text>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.container}>
+        <Text style={styles.header}>{friend.name}'s Profile</Text>
+        <View style={styles.imageContainer}>
+          <Image
+            source={friend.profilePicture}
+            style={styles.profileImage}
+          />
+        </View>
+        <View style={styles.detailsContainer}>
+          <Text style={styles.label}>Nickname:</Text>
+          <Text style={styles.value}>{friend.nickname}</Text>
 
-        <Text style={styles.label}>Birthdate:</Text>
-        <Text style={styles.value}>{friend.birthdate}</Text>
+          <Text style={styles.label}>Birthdate:</Text>
+          <Text style={styles.value}>{friend.birthdate}</Text>
 
-        <Text style={styles.label}>Phone:</Text>
-        <Text style={styles.value}>{friend.phone}</Text>
+          <Text style={styles.label}>Phone:</Text>
+          <Text style={styles.value}>{friend.phone}</Text>
 
-        <Text style={styles.label}>Email:</Text>
-        <Text style={styles.value}>{friend.email}</Text>
+          <Text style={styles.label}>Email:</Text>
+          <Text style={styles.value}>{friend.email}</Text>
 
-        <Text style={styles.label}>Hobbies:</Text>
-        <Text style={styles.value}>{friend.hobbies}</Text>
+          <Text style={styles.label}>Hobbies:</Text>
+          <Text style={styles.value}>{friend.hobbies}</Text>
 
-        <Text style={styles.label}>Pet:</Text>
-        <Text style={styles.value}>{friend.pet}</Text>
+          <Text style={styles.label}>Pet:</Text>
+          <Text style={styles.value}>{friend.pet}</Text>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollContainer:  {
+    flexGrow: 1,
+  },
   container: {
     flex: 1,
     padding: 20,
@@ -53,6 +64,16 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
+  imageContainer: {
+    alignItems: "center", 
+    marginBottom: 20,
+  },
+  profileImage: {
+    width: 150, 
+    height: 150, 
+    borderRadius: 75,  
+  },
+
   detailsContainer: {
     backgroundColor: "#fff",
     padding: 20,
