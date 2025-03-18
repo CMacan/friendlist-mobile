@@ -1,9 +1,23 @@
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { useRouter } from "expo-router";
 import { friends } from "../friendsData";
 
 export default function Index() {
   const router = useRouter();
+
+  const handlePress = (friend: any) => {
+    Alert.alert(
+      "Confirm", 
+      `Proceed to ${friend.name}'s profile?`, 
+      [
+        { text: "Cancel", style: "cancel" },
+        { 
+          text: "Proceed", 
+          onPress: () => router.push(`/friendDetails/${friend.id}`)
+        }
+      ]
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -11,12 +25,9 @@ export default function Index() {
         data={friends}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item, index }) => (
-          <TouchableOpacity
-            style={styles.item}
-            onPress={() => router.push(`/friendDetails/${item.id}`)} 
-          >
+          <TouchableOpacity style={styles.item} onPress={() => handlePress(item)}>
             <Text style={styles.name}>
-              {index + 1}.   {item.name}
+              {index + 1}. {item.name}
             </Text>
           </TouchableOpacity>
         )}
