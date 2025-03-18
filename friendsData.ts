@@ -4,4 +4,5 @@ export const friends = [
     { id: 3, name: 'Rhodjien Mary Caratao', profilePicture: require('./assets/images/Caratao.jpg'), nickname: 'Jin', birthdate: 'September 26', phone: '09053273129', email: 'carataojoegie@gmail.com', hobbies: 'Reading, Watching Basketball, Coding', pet: 'Dark' },
     { id: 4, name: 'Harley Dave Chavez', profilePicture: require('./assets/images/Chavez.png'), nickname: 'Boss Chabs', birthdate: 'March 31', phone: '09995839737', email: 'chavezharley72@gmail.com', hobbies: 'Computer, Food, Learning New Things', pet: 'Cat' },
     { id: 5, name: 'Abigail Belarma', profilePicture: require('./assets/images/Belarma.jpg'), nickname: 'Abi', birthdate: 'October 9', phone: '09082860922', email: 'abigail.belarma@gmail.com', hobbies: 'Drawing, Listening to Music, Reading Novels and Mangas/whas/huas', pet: 'Dog' },
+    { id: 6, name: 'Joshua Ardiente'}
   ];
