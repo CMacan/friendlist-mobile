@@ -1,6 +1,5 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
-//@ts-ignore
 import { friends } from "../friendsData";
 
 export default function Index() {
@@ -14,7 +13,6 @@ export default function Index() {
         renderItem={({ item, index }) => (
           <TouchableOpacity
             style={styles.item}
-            // @ts-ignore
             onPress={() => router.push(`/friendDetails/${item.id}`)} 
           >
             <Text style={styles.name}>
