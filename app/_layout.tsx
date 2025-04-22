@@ -5,11 +5,15 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen
       name="index"
-      options={{ title: "My Friendlist"}}
+      options={{ title: "Home"}}
       />
       <Stack.Screen
       name="friendDetails/[friendId]"
       options={{ title: "Profile"}}
+      />
+      <Stack.Screen
+      name="addFriend"
+      options={{ title: "Add Friend"}}
       />
       
     </Stack>

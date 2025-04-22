@@ -28,3 +28,10 @@ export const friends = [
       id: 6, name: 'Joshua Ardiente'
     }
   ];
+
+  
+  export function addFriend(newFriend: Omit<typeof friends[0], 'id'>) {
+    const newId = friends.length > 0 ? friends[friends.length - 1].id + 1 : 1;
+    // @ts-ignore
+    friends.push({ id: newId, ...newFriend });
+}

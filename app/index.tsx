@@ -32,6 +32,12 @@ export default function Index() {
           </TouchableOpacity>
         )}
       />
+      <TouchableOpacity 
+        style={styles.addButton} 
+        onPress={() => router.push("/addFriend")}
+      >
+        <Text style={styles.addButtonText}>+</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -57,5 +63,21 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     fontWeight: "500",
+  },
+  addButton: {
+    position: "absolute",
+    bottom: 30,
+    left: 20,
+    backgroundColor: "green",
+    paddingVertical: 15,
+    paddingHorizontal: 25,
+    borderRadius: 20,
+    elevation: 5,
+    
+  },
+  addButtonText: {
+    color: "#fff",
+    fontSize: 30,
+    fontWeight: 500,
   },
 });
