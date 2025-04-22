@@ -45,7 +45,8 @@ export default function AddFriend() {
       phone,
       email,
       hobbies,
-      pet,
+      pet, 
+      profilePicture:null
     });
 
     Alert.alert("Success", "Friend added successfully!");
